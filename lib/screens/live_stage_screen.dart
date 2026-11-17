@@ -193,10 +193,10 @@ class _LiveStageScreenState extends ConsumerState<LiveStageScreen> {
                     const SizedBox(height: 6),
                     Text(
                       '"${currentContrib.blessingMessage}"',
-                      style: GoogleFonts.cormorantGaramond(
+                      style: GoogleFonts.outfit(
                         color: Colors.white.withOpacity(0.9),
-                        fontSize: 16,
-                        fontStyle: FontStyle.italic,
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
                       ),
                     ),
                   ],

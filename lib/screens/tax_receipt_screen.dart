@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../core/constants/app_constants.dart';
 import '../core/theme/app_theme.dart';
 import '../models/gift_contribution.dart';
 
@@ -24,9 +25,29 @@ class TaxReceiptScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios, color: AppTheme.crimsonMaroon, size: 18),
           onPressed: () => Navigator.maybePop(context),
         ),
-        title: Text(
-          'Tax-Exempt Receipt',
-          style: GoogleFonts.cinzel(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.crimsonMaroon),
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 28,
+              height: 28,
+              padding: const EdgeInsets.all(2),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(7),
+                border: Border.all(color: AppTheme.royalGold.withOpacity(0.6), width: 1),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Image.asset(AppConstants.appIconPath, fit: BoxFit.contain),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'Tax-Exempt Receipt',
+              style: GoogleFonts.cinzel(fontSize: 15, fontWeight: FontWeight.bold, color: AppTheme.crimsonMaroon),
+            ),
+          ],
         ),
         centerTitle: true,
       ),
@@ -108,6 +129,38 @@ class TaxReceiptScreen extends StatelessWidget {
 
                   Column(
                     children: [
+                      Container(
+                        width: 46,
+                        height: 46,
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          border: Border.all(color: AppTheme.royalGold, width: 1.5),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppTheme.royalGold.withOpacity(0.2),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(AppConstants.appIconPath, fit: BoxFit.contain),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'PLOT THEIR FUTURE',
+                        style: GoogleFonts.cinzel(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: AppTheme.royalGold,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
                       Text(
                         'You have gifted',
                         style: GoogleFonts.outfit(

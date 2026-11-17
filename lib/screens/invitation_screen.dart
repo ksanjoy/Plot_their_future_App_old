@@ -130,9 +130,9 @@ class InvitationScreen extends ConsumerWidget {
                     const SizedBox(height: 8),
                     Text(
                       AppConstants.weddingTagline,
-                      style: GoogleFonts.cormorantGaramond(
-                        fontSize: 16,
-                        fontStyle: FontStyle.italic,
+                      style: GoogleFonts.outfit(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
                         color: AppTheme.lightGold,
                       ),
                     ),
@@ -169,8 +169,8 @@ class InvitationScreen extends ConsumerWidget {
                       Text(
                         'Together with their loving families, Aarav & Meera request the honor of your presence and blessings as they embark on their sacred journey of marriage and eternal partnership.',
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.cormorantGaramond(
-                          fontSize: 17,
+                        style: GoogleFonts.outfit(
+                          fontSize: 14,
                           height: 1.5,
                           color: Colors.white.withOpacity(0.9),
                         ),
@@ -440,11 +440,11 @@ class InvitationScreen extends ConsumerWidget {
                       Text(
                         '"We met under the autumn trees six years ago and realized we shared the exact same dream: building a loving, welcoming home filled with warmth, warm meals, deep books, and open doors for our dearest friends and family."',
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.cormorantGaramond(
-                          fontSize: 16,
-                          fontStyle: FontStyle.italic,
+                        style: GoogleFonts.outfit(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
                           color: Colors.white.withOpacity(0.9),
-                          height: 1.4,
+                          height: 1.45,
                         ),
                       ),
                       const SizedBox(height: 8),

@@ -60,22 +60,60 @@ class _SecurityFaqScreenState extends State<SecurityFaqScreen> {
           faq['category']!.toLowerCase().contains(_searchQuery.toLowerCase());
     }).toList();
 
+    final canPop = Navigator.canPop(context);
     return Scaffold(
       backgroundColor: AppTheme.ivoryBackground,
-      appBar: AppBar(
-        backgroundColor: AppTheme.ivoryBackground,
-        elevation: 0,
-        surfaceTintColor: Colors.transparent,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: AppTheme.crimsonMaroon, size: 18),
-          onPressed: () => Navigator.maybePop(context),
-        ),
-        title: Text(
-          'FAQ & Security Center',
-          style: GoogleFonts.cinzel(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.crimsonMaroon),
-        ),
-        centerTitle: true,
-      ),
+      appBar: canPop
+          ? AppBar(
+              backgroundColor: AppTheme.ivoryBackground,
+              elevation: 0,
+              surfaceTintColor: Colors.transparent,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios, color: AppTheme.crimsonMaroon, size: 18),
+                onPressed: () => Navigator.maybePop(context),
+              ),
+              title: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/brand_gold_gift_house_icon.png',
+                    height: 30,
+                    fit: BoxFit.contain,
+                    errorBuilder: (_, __, ___) => Image.asset(AppConstants.appIconPath, height: 30),
+                  ),
+                  const SizedBox(width: 8),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'PlotTheir',
+                        style: GoogleFonts.playfairDisplay(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF701322),
+                          letterSpacing: -0.2,
+                          height: 1.1,
+                        ),
+                      ),
+                      Text(
+                        'Future',
+                        style: GoogleFonts.playfairDisplay(
+                          fontSize: 12.5,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFFC58B24),
+                          letterSpacing: 0.2,
+                          height: 1.1,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              centerTitle: true,
+            )
+          : null,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

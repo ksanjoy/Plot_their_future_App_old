@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../core/constants/app_constants.dart';
 import '../core/theme/app_theme.dart';
 
 class WhyGiftSqFtScreen extends StatelessWidget {
@@ -7,27 +8,60 @@ class WhyGiftSqFtScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final canPop = Navigator.canPop(context);
     return Scaffold(
       backgroundColor: AppTheme.ivoryBackground,
-      appBar: AppBar(
-        backgroundColor: AppTheme.ivoryBackground,
-        elevation: 0,
-        surfaceTintColor: Colors.transparent,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: AppTheme.crimsonMaroon, size: 18),
-          onPressed: () => Navigator.maybePop(context),
-        ),
-        title: Text(
-          'Plot Their Future',
-          style: GoogleFonts.cormorantGaramond(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-            color: AppTheme.royalGold,
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: canPop
+          ? AppBar(
+              backgroundColor: AppTheme.ivoryBackground,
+              elevation: 0,
+              surfaceTintColor: Colors.transparent,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios, color: AppTheme.crimsonMaroon, size: 18),
+                onPressed: () => Navigator.maybePop(context),
+              ),
+              title: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/brand_gold_gift_house_icon.png',
+                    height: 30,
+                    fit: BoxFit.contain,
+                    errorBuilder: (_, __, ___) => Image.asset(AppConstants.appIconPath, height: 30),
+                  ),
+                  const SizedBox(width: 8),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'PlotTheir',
+                        style: GoogleFonts.playfairDisplay(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF701322),
+                          letterSpacing: -0.2,
+                          height: 1.1,
+                        ),
+                      ),
+                      Text(
+                        'Future',
+                        style: GoogleFonts.playfairDisplay(
+                          fontSize: 12.5,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFFC58B24),
+                          letterSpacing: 0.2,
+                          height: 1.1,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              centerTitle: true,
+            )
+          : null,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -50,6 +84,43 @@ class WhyGiftSqFtScreen extends StatelessWidget {
                 fontSize: 13,
                 color: AppTheme.textMuted,
                 fontWeight: FontWeight.w500,
+              ),
+            ),
+            const SizedBox(height: 18),
+
+            // OFFICIAL MANIFESTO QUOTE CARD
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: AppTheme.goldCardFill,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: AppTheme.goldBorder.withOpacity(0.8)),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    '“',
+                    style: TextStyle(
+                      fontSize: 34,
+                      color: AppTheme.royalGold,
+                      height: 0.8,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'The gifts of a wedding day shouldn\'t vanish into attics or recurring bills. What you gift today should lay the cornerstone of generational wealth. One square foot at a time.',
+                      style: GoogleFonts.outfit(
+                        fontSize: 13.5,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xFF4A350E),
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: 18),
@@ -227,7 +298,6 @@ class WhyGiftSqFtScreen extends StatelessWidget {
                     'Official Registry Notice & Voluntary Gifting Disclaimer',
                     style: GoogleFonts.outfit(
                       fontSize: 11,
-                      fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFFB8860B),
                     ),
@@ -293,9 +363,9 @@ class WhyGiftSqFtScreen extends StatelessWidget {
                   Text(
                     '"Empowering loved ones to lay the foundation for a lifetime of memories."',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.cormorantGaramond(
-                      fontSize: 13,
-                      fontStyle: FontStyle.italic,
+                    style: GoogleFonts.outfit(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
                       color: const Color(0xFF64748B),
                     ),
                   ),

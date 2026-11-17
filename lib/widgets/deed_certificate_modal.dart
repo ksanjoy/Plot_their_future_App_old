@@ -84,22 +84,27 @@ class _DeedCertificateModalState extends State<DeedCertificateModal> {
                       children: [
                         // Seal / Emblem
                         Container(
-                          width: 60,
-                          height: 60,
+                          width: 64,
+                          height: 64,
+                          padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
+                            color: Colors.white,
                             border: Border.all(color: AppTheme.primaryGold, width: 2),
-                            gradient: RadialGradient(
-                              colors: [
-                                AppTheme.primaryGold.withOpacity(0.3),
-                                Colors.transparent,
-                              ],
-                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppTheme.primaryGold.withOpacity(0.4),
+                                blurRadius: 14,
+                                spreadRadius: 1,
+                              ),
+                            ],
                           ),
-                          child: const Icon(
-                            Icons.home_work_outlined,
-                            color: AppTheme.lightGold,
-                            size: 32,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Image.asset(
+                              AppConstants.appIconPath,
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 14),
@@ -141,9 +146,9 @@ class _DeedCertificateModalState extends State<DeedCertificateModal> {
 
                         Text(
                           'This is to honor and certify that',
-                          style: GoogleFonts.cormorantGaramond(
-                            fontSize: 15,
-                            fontStyle: FontStyle.italic,
+                          style: GoogleFonts.outfit(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
                             color: AppTheme.textMuted,
                           ),
                         ),
@@ -220,9 +225,9 @@ class _DeedCertificateModalState extends State<DeedCertificateModal> {
                           child: Text(
                             '"${c.blessingMessage}"',
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.cormorantGaramond(
-                              fontSize: 15,
-                              fontStyle: FontStyle.italic,
+                            style: GoogleFonts.outfit(
+                              fontSize: 13,
+                              fontWeight: FontWeight.normal,
                               color: Colors.white.withOpacity(0.9),
                             ),
                           ),

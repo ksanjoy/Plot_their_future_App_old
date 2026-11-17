@@ -266,10 +266,10 @@ class _WallOfBlessingsWidgetState extends ConsumerState<WallOfBlessingsWidget> {
                   child: Text(
                     '"${contrib.blessingMessage}"',
                     style: GoogleFonts.outfit(
-                      fontStyle: FontStyle.italic,
                       fontSize: 13,
+                      fontWeight: FontWeight.normal,
                       color: Colors.white.withOpacity(0.85),
-                      height: 1.3,
+                      height: 1.35,
                     ),
                   ),
                 ),

@@ -1,4 +1,8 @@
 class AppConstants {
+  // REST API Configuration - Local Backend on Port 8085
+  static const String apiBaseUrl = "http://localhost:8085";
+  static const String apiVersion = "v1";
+
   // Couple Details from Sanvi & Santosh specification
   static const String brideName = "Sanvi Rao";
   static const String groomName = "Santosh Kumar";
@@ -25,7 +29,9 @@ class AppConstants {
   static const String escrowIFSC = "HDFC00012";
   static const String taxExemptionSection = "Sec 56(2)(x) of Indian Income Tax Act";
 
-  // Assets
+  // Assets & Branding
+  static const String appIconPath = "assets/images/app_icon.png";
+  static const String appLogoHeaderPath = "assets/images/app_logo_header.png";
   static const String qrBannerPath = "assets/images/qr_banner.jpg";
   static const String heroBannerPath = "assets/images/hero_banner.jpg";
   static const String apartmentPosterPath = "assets/images/apartment_poster.jpg";

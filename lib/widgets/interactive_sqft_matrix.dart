@@ -181,7 +181,6 @@ class _InteractiveSqFtMatrixWidgetState extends ConsumerState<InteractiveSqFtMat
                               child: Text(
                                 '"${contrib.blessingMessage}"',
                                 style: GoogleFonts.outfit(
-                                  fontStyle: FontStyle.italic,
                                   fontSize: 13,
                                   color: Colors.white.withOpacity(0.9),
                                 ),

@@ -49,6 +49,18 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>PlotTheirFuture uses your location to pinpoint wedding venues and ceremony maps.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>PlotTheirFuture uses your location to pinpoint wedding venues and ceremony maps.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>PlotTheirFuture requires contacts access to import and invite guests to your wedding ceremonies.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>PlotTheirFuture requires camera access to photograph architectural flats, blueprints, and wedding documents.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>PlotTheirFuture requires photo gallery access to upload flat photos and floor plans.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>PlotTheirFuture requires photo library access to save flat certificates and deeds.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
